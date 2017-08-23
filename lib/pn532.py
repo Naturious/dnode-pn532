@@ -4,11 +4,13 @@ import json
 import time
 
 import Adafruit_PN532 as PN532
+import Adafruit_GPIO as GPIO
+import RPi.GPIO
 
-CS   = 18
-MOSI = 23
-MISO = 24
-SCLK = 25
+CS   = 8
+MOSI = 7
+MISO = 3
+SCLK = 5
 SCAN_TIMEOUT = 1
 
 if len(sys.argv) > 1:
@@ -23,7 +25,7 @@ if len(sys.argv) > 2:
 time.sleep(2)
 
 # initialize pn532 python
-pn532 = PN532.PN532(cs=CS, sclk=SCLK, mosi=MOSI, miso=MISO)
+pn532 = PN532.PN532(cs=CS, sclk=SCLK, mosi=MOSI, miso=MISO,gpio = GPIO.RPiGPIOAdapter(RPi.GPIO,RPi.GPIO.BOARD))
 
 # begin pn532 operations
 pn532.begin()
