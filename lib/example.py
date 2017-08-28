@@ -32,8 +32,8 @@ import RPi.GPIO
 # Configuration for a Raspberry Pi:
 CS   = 8
 MOSI = 7
-MISO = 3
-SCLK = 5
+MISO = 18
+SCLK = 22
 
 # Configuration for a BeagleBone Black:
 # CS   = 'P8_7'
