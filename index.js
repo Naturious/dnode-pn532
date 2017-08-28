@@ -7,10 +7,10 @@ function PN532(config) {
 
   const options = Object.assign(
     {
-      CS: 16,
-      MOSI: 20,
-      MISO: 19,
-      SCLK: 21,
+      CS: 8,
+      MOSI: 7,
+      MISO: 18,
+      SCLK: 22,
       SCAN_TIMEOUT: 1.5
     },
     config
